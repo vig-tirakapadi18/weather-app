@@ -1,13 +1,5 @@
 const GetWeather = () => {
-  return (
-    <form>
-      <input
-        type="text"
-        placeholder="Enter city name"
-      />
-      <button>Get Weather</button>
-    </form>
-  );
+  return <div>GetWeather</div>;
 };
 
 export default GetWeather;
