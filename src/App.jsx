@@ -1,5 +1,11 @@
+import GetWeather from "./components/GetWeather";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <GetWeather />
+    </>
+  );
 };
 
 export default App;
