@@ -14,3 +14,7 @@ Currently, two official plugins are available:
 3. Fetched the weather data from API end point `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
 4. Set the weather data using state updating function and passed the data through props to the "WeatherDetails" component.
+
+5. Displayed the weather data on the UI
+
+6. Initialized tailwindCSS for styling
