@@ -18,3 +18,7 @@ Currently, two official plugins are available:
 5. Displayed the weather data on the UI
 
 6. Initialized tailwindCSS for styling
+
+7. Styled the application using tailwindCSS
+
+8. Handled error if the entered city is invalid by showing user a message "City Not Found!"

@@ -4,7 +4,7 @@ import WeatherDetails from "./WeatherDetails";
 const GetWeather = () => {
   const [city, setCity] = useState("");
   const [weatherDetails, setWeatherDetails] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   const apiKey = "8e07810dc6743ea3994df51b510a2aa9";
 
@@ -14,7 +14,11 @@ const GetWeather = () => {
       const fetchWeatherResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
+
       const fetchWeatherResponseData = await fetchWeatherResponse.json();
+      if (!fetchWeatherResponse.ok) setError(fetchWeatherResponseData.message);
+      if (fetchWeatherResponse.ok) setError(null);
+      console.log(fetchWeatherResponseData);
       setWeatherDetails(fetchWeatherResponseData);
     } catch (error) {
       console.log(error.message);
@@ -39,10 +43,14 @@ const GetWeather = () => {
         </button>
       </form>
 
-      <WeatherDetails
-        weatherDetails={weatherDetails}
-        error={error}
-      />
+      {error ? (
+        <p className="text-center text-rose-600 capitalize">{error}!</p>
+      ) : (
+        <WeatherDetails
+          weatherDetails={weatherDetails}
+          error={error}
+        />
+      )}
     </>
   );
 };

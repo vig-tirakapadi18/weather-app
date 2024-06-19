@@ -1,7 +1,7 @@
 const WeatherDetails = ({ weatherDetails, error }) => {
   return (
     <>
-      {weatherDetails ? (
+      {weatherDetails.name && (
         <div className="mx-[20%] bg-stone-300 p-4 rounded-lg text-center">
           <h2 className="uppercase font-bold text-2xl">
             {weatherDetails.name}
@@ -19,9 +19,12 @@ const WeatherDetails = ({ weatherDetails, error }) => {
             </span>
           </p>
         </div>
-      ) : (
-        <p className="text-rose-500 text-center">{error}</p>
       )}
+      {/* : (
+        <p className="text-rose-500 text-center">
+          Please enter a valid City name!
+        </p>
+      ) */}
     </>
   );
 };
