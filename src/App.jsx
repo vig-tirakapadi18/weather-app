@@ -1,4 +1,4 @@
-import GetWeather from "./components/GetWeather";
+import GetWeather from "./components/Weather/GetWeather";
 
 const App = () => {
   return (

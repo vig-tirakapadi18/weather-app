@@ -22,3 +22,5 @@ Currently, two official plugins are available:
 7. Styled the application using tailwindCSS
 
 8. Handled error if the entered city is invalid by showing user a message "City Not Found!"
+
+9. Added pulse loading before showing weather data
