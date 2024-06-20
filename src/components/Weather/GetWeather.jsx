@@ -32,6 +32,8 @@ const GetWeather = () => {
     }
   };
 
+  // console.log(weatherDetails.weather[0].icon);
+
   return (
     <>
       <form className="flex flex-col h-[30vh] justify-center items-center gap-2">
@@ -52,7 +54,9 @@ const GetWeather = () => {
       {!error && loading && <Loader />}
 
       {error ? (
-        <p className="text-center text-rose-600 capitalize">{error}!</p>
+        <p className="text-center bg-rose-500 capitalize w-[50%] mx-auto p-4 text-white text-2xl rounded-md">
+          ❌ {error}!
+        </p>
       ) : (
         <WeatherDetails
           weatherDetails={weatherDetails}
