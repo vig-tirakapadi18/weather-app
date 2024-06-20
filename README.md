@@ -24,3 +24,5 @@ Currently, two official plugins are available:
 8. Handled error if the entered city is invalid by showing user a message "City Not Found!"
 
 9. Added pulse loading before showing weather data
+
+10. Added debouncing functionality to reduce the number of HTTP requests
