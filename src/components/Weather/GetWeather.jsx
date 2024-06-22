@@ -29,42 +29,18 @@ const GetWeather = () => {
         setError(error.message);
         setLoading(false);
       }
-    }, 500);
+    }, 3000);
 
     return () => clearTimeout(fetchDataTimeout);
   }, [city]);
 
   const apiKey = "8e07810dc6743ea3994df51b510a2aa9";
 
-  // const fetchWeatherHandler = async (event) => {
-  //   // event.preventDefault();
-  //   setCity(event.target.value);
-  //   setTimeout(async () => {
-  //     try {
-  //       setLoading(true);
-  //       const fetchWeatherResponse = await fetch(
-  //         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-  //       );
-
-  //       const fetchWeatherResponseData = await fetchWeatherResponse.json();
-  //       if (!fetchWeatherResponse.ok)
-  //         setError(fetchWeatherResponseData.message);
-
-  //       if (fetchWeatherResponse.ok) {
-  //         setError(null);
-  //         setLoading(false);
-  //       }
-  //       setWeatherDetails(fetchWeatherResponseData);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   }, 5000);
-  // };
-
   return (
     <>
-      <form className="flex flex-col h-[30vh] justify-center items-center gap-2">
+      <form
+        // onSubmit={() => setCity("")}
+        className="flex flex-col h-[30vh] justify-center items-center gap-2">
         <input
           type="text"
           placeholder="Enter city name"
@@ -81,7 +57,7 @@ const GetWeather = () => {
 
       {!error && loading && <Loader />}
 
-      {error ? (
+      {error && city.length > 0 ? (
         <p className="text-center bg-rose-500 capitalize w-[50%] mx-auto p-4 text-white text-2xl rounded-md">
           ❌ {error}!
         </p>
